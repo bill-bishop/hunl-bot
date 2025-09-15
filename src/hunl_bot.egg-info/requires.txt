@@ -1,0 +1,10 @@
+torch
+numpy
+omegaconf
+pytest
+black
+isort
+flake8
+matplotlib
+pandas
+openspiel

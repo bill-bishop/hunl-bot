@@ -1,0 +1,9 @@
+# League training config
+league:
+  opponents: [blueprint, exploiter]
+  gating:
+    confidence: 0.95
+    min_games: 1000
+  sampling:
+    strategy: weighted
+    exploiters_fraction: 0.2

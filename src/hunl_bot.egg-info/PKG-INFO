@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: hunl-bot
+Version: 0.1.0
+Summary: Heads-Up No-Limit Poker RL Bot
+Author-email: Your Name <you@example.com>
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch
+Requires-Dist: numpy
+Requires-Dist: omegaconf
+Requires-Dist: pytest
+Requires-Dist: black
+Requires-Dist: isort
+Requires-Dist: flake8
+Requires-Dist: matplotlib
+Requires-Dist: pandas
+Requires-Dist: openspiel
+Dynamic: license-file

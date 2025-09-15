@@ -1,0 +1,10 @@
+# Deep CFR blueprint config
+abstraction:
+  card_buckets: 1000
+  board_buckets: 100
+cfr:
+  iterations: 10000
+  batch_size: 2048
+network:
+  hidden_sizes: [256, 256]
+  lr: 1e-3

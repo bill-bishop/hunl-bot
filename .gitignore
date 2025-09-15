@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+.venv/
+
+# Data and checkpoints
+data/checkpoints/
+data/rollout/
+data/logs/
+
+# Notebooks
+*.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/

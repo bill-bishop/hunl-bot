@@ -1,0 +1,8 @@
+# Evaluation config
+eval:
+  ladders: true
+  seeds: [42, 1337, 2024]
+  budget: 10000
+metrics:
+  - bb_per_100
+  - nash_conv

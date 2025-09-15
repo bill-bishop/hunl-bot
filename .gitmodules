@@ -1,0 +1,6 @@
+[submodule "hunl-bot/third_party/open_spiel"]
+	path = hunl-bot/third_party/open_spiel
+	url = https://github.com/deepmind/open_spiel.git
+[submodule "third_party/open_spiel"]
+	path = third_party/open_spiel
+	url = https://github.com/deepmind/open_spiel.git

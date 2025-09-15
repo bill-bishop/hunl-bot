@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  learner:
+    build: .
+    volumes:
+      - .:/app
+    command: bash -c "python -m hunl.cli.train_rl --cfg configs/rl.ppo.yaml"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  actors:
+    build: .
+    volumes:
+      - .:/app
+    command: bash -c "python -m hunl.cli.play_headless"
+    scale: 4

@@ -1,0 +1,9 @@
+# Subgame re-solver config
+subgame:
+  max_depth: 3
+  iterations: 200
+cfr:
+  batch_size: 512
+network:
+  hidden_sizes: [128, 128]
+  lr: 1e-4
