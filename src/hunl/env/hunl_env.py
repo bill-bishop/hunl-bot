@@ -1,5 +1,5 @@
 import numpy as np
-import pyspiel
+from . import pyspiel  # use real pyspiel or stub fallback
 
 class HunlEnv:
     """
@@ -14,14 +14,9 @@ class HunlEnv:
         self.antes = antes
 
         game_string = (
-            f"universal_poker(
-            betting=betting_nolimit_hunl,
-            numPlayers=2,
-            stack={stack},
-            blinds={blinds[0]},{blinds[1]},
-            antes={antes},
-            rake={rake},
-            )"
+            f"universal_poker(betting=betting_nolimit_hunl," \
+            f"numPlayers=2,stack={stack},blinds={blinds[0]},{blinds[1]}," \
+            f"antes={antes},rake={rake})"
         )
         self.game = pyspiel.load_game(game_string)
         self.reset()

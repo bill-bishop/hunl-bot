@@ -1,6 +1,11 @@
 import numpy as np
-from sklearn.cluster import KMeans
 from itertools import combinations
+
+try:
+    from sklearn.cluster import KMeans  # real sklearn
+except ImportError:
+    from sklearn.cluster import KMeans  # sandbox fallback
+
 import pyspiel
 
 class CardBucketer:
@@ -25,7 +30,6 @@ class CardBucketer:
             total = 0
             for _ in range(self.num_samples):
                 state = game.new_initial_state()
-                # deal full board (Texas Hold'em has 5 public cards)
                 while not state.is_terminal():
                     legal = state.legal_actions()
                     a = self.rng.choice(legal)
@@ -37,7 +41,7 @@ class CardBucketer:
         return np.array(equities).reshape(-1, 1)
 
     def fit(self):
-        game = pyspiel.load_game("universal_poker(betting=betting_nolimit_hunl, numPlayers=2)")
+        game = pyspiel.load_game("universal_poker(betting=betting_nolimit_hunl,numPlayers=2)")
         deck = list(range(52))
         hands = list(combinations(deck, 2))
         self.rng.shuffle(hands)

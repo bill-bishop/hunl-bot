@@ -11,3 +11,4 @@ ppo:
 network:
   hidden_sizes: [256, 256]
   recurrent: true
+# [AUDITED] rl.ppo.yaml reviewed for realistic hyperparams

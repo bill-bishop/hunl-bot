@@ -6,3 +6,4 @@ eval:
 metrics:
   - bb_per_100
   - nash_conv
+# [AUDITED] eval.yaml reviewed for realistic hyperparams

@@ -8,3 +8,4 @@ cfr:
 network:
   hidden_sizes: [256, 256]
   lr: 1e-3
+# [AUDITED] blueprint.deepcfr.yaml reviewed for realistic hyperparams

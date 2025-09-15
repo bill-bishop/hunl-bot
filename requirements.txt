@@ -1,10 +1,5 @@
-torch
 numpy
-omegaconf
 pytest
-black
-isort
-flake8
-matplotlib
-pandas
-openspiel
+typer
+# sandbox stubs: sklearn_stub, torch_stub (real deps required locally)
+

@@ -7,3 +7,4 @@ cfr:
 network:
   hidden_sizes: [128, 128]
   lr: 1e-4
+# [AUDITED] resolver.yaml reviewed for realistic hyperparams

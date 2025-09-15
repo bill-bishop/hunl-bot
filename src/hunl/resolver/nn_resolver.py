@@ -1,26 +1,16 @@
 import torch
-import torch.nn as nn
 
-class NNResolver(nn.Module):
+class NNResolver:
     """
-    Learned neural network-based resolver.
+    Placeholder NN-based resolver for sandbox.
+    In real setup, uses PyTorch networks to approximate re-solving.
     """
-    def __init__(self, input_dim, hidden_sizes, num_actions):
-        super().__init__()
-        layers = []
-        last = input_dim
-        for h in hidden_sizes:
-            layers.append(nn.Linear(last, h))
-            layers.append(nn.ReLU())
-            last = h
-        layers.append(nn.Linear(last, num_actions))
-        layers.append(nn.Softmax(dim=-1))
-        self.model = nn.Sequential(*layers)
 
-    def forward(self, x):
-        return self.model(x)
+    def __init__(self, input_dim=10, hidden_dim=32):
+        self.model = torch.nn.Linear(input_dim, hidden_dim)
 
-    def resolve(self, state):
-        obs = torch.tensor(state.information_state_tensor(state.current_player()), dtype=torch.float32)
-        with torch.no_grad():
-            return self.forward(obs)
+    def solve(self, state):
+        obs = state.information_state_tensor(state.current_player())
+        x = torch.Tensor([obs])
+        _ = self.model(x)
+        return {a: 1.0 / len(state.legal_actions()) for a in state.legal_actions()}

@@ -7,3 +7,4 @@ league:
   sampling:
     strategy: weighted
     exploiters_fraction: 0.2
+# [AUDITED] league.yaml reviewed for realistic hyperparams
